@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atharva Shinde — ML Engineer & Data Scientist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --bg:#0e0e0e;
+    --bg2:#161616;
+    --bg3:#1e1e1e;
+    --neon:#4ade80;
+    --neon-dim:#22c55e;
+    --text:#f0f0ee;
+    --text-sec:#aaaaaa;
+    --text-muted:#555;
+    --border:#2a2a2a;
+    --border-strong:#3a3a3a;
+    --radius:8px;
+  }
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;padding:0 1.5rem}
+  .wrap{max-width:740px;margin:0 auto;padding:0 0 6rem}
+
+  nav{display:flex;justify-content:space-between;align-items:center;padding:1.75rem 0;border-bottom:0.5px solid var(--border)}
+  .nav-name{font-size:14px;font-weight:500;letter-spacing:0.04em;color:var(--text)}
+  .nav-links{display:flex;gap:1.5rem}
+  .nav-links a{font-size:13px;color:var(--text-muted);text-decoration:none;transition:color 0.2s}
+  .nav-links a:hover{color:var(--neon)}
+
+  .hero{padding:4rem 0 3rem;border-bottom:0.5px solid var(--border)}
+  .eyebrow{display:flex;align-items:center;gap:8px;margin-bottom:1.75rem}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--neon);animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
+  .avail{font-size:12px;color:var(--text-muted);letter-spacing:0.06em;text-transform:uppercase}
+  .hero-label{font-size:15px;color:var(--text-sec);margin-bottom:0.5rem}
+  h1{font-size:72px;font-weight:700;line-height:1;color:var(--neon);letter-spacing:-0.02em;margin-bottom:1.5rem;text-transform:uppercase}
+  .tagline{font-size:16px;color:var(--text-sec);line-height:1.7;max-width:540px;margin-bottom:2rem}
+  .pills{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:2.25rem}
+  .pill{font-size:11px;padding:4px 10px;border-radius:20px;border:0.5px solid var(--border-strong);color:var(--text-muted);background:var(--bg2)}
+  .pill.hot{border-color:var(--neon-dim);color:var(--neon);background:rgba(74,222,128,0.06);font-weight:500}
+  .cta-row{display:flex;gap:10px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:var(--radius);font-size:13px;font-weight:500;text-decoration:none;border:0.5px solid var(--border-strong);color:var(--text);background:var(--bg2);transition:all 0.15s}
+  .btn:hover{border-color:var(--neon);color:var(--neon)}
+  .btn.solid{background:var(--neon);color:#0e0e0e;border-color:var(--neon);font-weight:700}
+  .btn.solid:hover{background:#22c55e;border-color:#22c55e}
+
+  section{padding:2.75rem 0;border-bottom:0.5px solid var(--border)}
+  section:last-child{border-bottom:none}
+  .sec-hd{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:1.5rem}
+  .sec-title{font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted)}
+  .sec-count{font-size:12px;color:var(--text-muted)}
+
+  .proj{display:grid;grid-template-columns:44px 1fr auto;gap:0 16px;align-items:start;padding:18px 0;border-bottom:0.5px solid var(--border);transition:all 0.15s}
+  .proj:last-child{border-bottom:none}
+  .proj:hover .proj-num{color:var(--neon)}
+  .proj:hover .proj-title{color:var(--neon)}
+  .proj-num{font-size:12px;color:var(--text-muted);padding-top:2px;transition:color 0.15s;font-variant-numeric:tabular-nums}
+  .proj-title{font-size:15px;font-weight:500;margin-bottom:4px;color:var(--text);transition:color 0.15s}
+  .proj-badge{display:inline-block;font-size:10px;padding:2px 8px;border-radius:20px;background:rgba(74,222,128,0.08);color:var(--neon);border:0.5px solid var(--neon-dim);margin-bottom:6px;font-weight:500}
+  .proj-desc{font-size:13px;color:var(--text-sec);line-height:1.6;margin-bottom:8px}
+  .proj-stack{display:flex;flex-wrap:wrap;gap:4px}
+  .stag{font-size:11px;padding:2px 8px;border-radius:4px;background:var(--bg3);color:var(--text-muted);border:0.5px solid var(--border-strong)}
+  .proj-link{color:var(--text-muted);font-size:17px;text-decoration:none;padding-top:2px;transition:color 0.15s}
+  .proj-link:hover{color:var(--neon)}
+
+  .skill-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;border:0.5px solid var(--border);border-radius:12px;overflow:hidden;background:var(--border)}
+  .skill-cell{padding:1.25rem;background:var(--bg2);transition:background 0.15s}
+  .skill-cell:hover{background:var(--bg3)}
+  .skill-cat{font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--neon);margin-bottom:8px}
+  .sk{font-size:12px;color:#aaaaaa}
+  .sk::after{content:" · ";color:#4ade80;font-size:14px;font-weight:700}
+  .sk:last-child::after{content:""}
+
+  .edu-item{display:flex;justify-content:space-between;align-items:flex-start;padding:14px 0;border-bottom:0.5px solid var(--border)}
+  .edu-item:last-child{border-bottom:none}
+  .edu-deg{font-size:14px;font-weight:500;color:var(--text)}
+  .edu-school{font-size:13px;color:var(--text-sec);margin-top:3px}
+  .edu-date{font-size:12px;color:var(--text-muted);white-space:nowrap;margin-left:16px;padding-top:2px}
+
+  .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+  .contact-card{background:var(--bg2);border:0.5px solid var(--border);border-radius:12px;padding:1rem;display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text);transition:border-color 0.2s,background 0.2s}
+  .contact-card:hover{border-color:var(--neon);background:rgba(74,222,128,0.05)}
+  .contact-icon{width:36px;height:36px;border-radius:8px;background:var(--bg3);border:0.5px solid var(--border-strong);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--neon)}
+  .contact-label{font-size:13px;font-weight:500;color:var(--text)}
+  .contact-val{font-size:11px;color:var(--text-muted);margin-top:1px}
+
+  footer{padding:2rem 0;text-align:center;font-size:12px;color:var(--text-muted)}
+
+  .fade-up{opacity:0;transform:translateY(20px);transition:opacity 0.55s ease,transform 0.55s ease}
+  .fade-up.vis{opacity:1;transform:translateY(0)}
+
+  @media(max-width:600px){
+    h1{font-size:44px}
+    .nav-links{gap:1rem}
+    .proj{grid-template-columns:32px 1fr auto}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="fade-up">
+    <span class="nav-name">ATHARVA SHINDE</span>
+    <div class="nav-links">
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="eyebrow fade-up">
+      <div class="dot"></div>
+      <span class="avail">Open to full-time · OPT · Dec 2026</span>
+    </div>
+    <p class="hero-label fade-up">Hey, I'm a ML Engineer & Data Scientist</p>
+    <h1 class="fade-up">ATHARVA<br>SHINDE.</h1>
+    <p class="tagline fade-up">I build AI — fine-tuning transformers, engineering production ML pipelines, and deploying end-to-end systems that solve real problems. From BERT-powered NLP to Dockerized APIs on AWS, I take models from research to prod.</p>
+
+    <div class="cta-row fade-up">
+      <a href="mailto:shindeatharva0324@gmail.com" class="btn solid">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        Email me
+      </a>
+      <a href="https://github.com/atharva0324" class="btn" target="_blank" rel="noopener">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.2c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+        GitHub
+      </a>
+      <a href="https://linkedin.com/in/atharva-shinde-51b646284" class="btn" target="_blank" rel="noopener">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
+    </div>
+  </header>
+
+  <section id="projects">
+    <div class="sec-hd fade-up">
+      <span class="sec-title">Projects</span>
+      <span class="sec-count">4 projects</span>
+    </div>
+
+    <div class="proj fade-up">
+      <span class="proj-num">01</span>
+      <div>
+        <div class="proj-title">JobFit AI</div>
+        <div class="proj-badge">NLP · End-to-end system</div>
+        <div class="proj-desc">Transformer-powered pipeline that extracts skills from job descriptions using fine-tuned BERT with BIO tagging (NER), then scores resume fit via weighted semantic similarity using sentence embeddings. Two models, one unified system — skill extraction feeds directly into the matching engine.</div>
+        <div class="proj-stack"><span class="stag">BERT</span><span class="stag">BIO tagging</span><span class="stag">HuggingFace</span><span class="stag">all-MiniLM-L6-v2</span><span class="stag">FastAPI</span><span class="stag">Streamlit</span><span class="stag">MLflow</span><span class="stag">Docker</span></div>
+      </div>
+      <a href="https://github.com/atharva0324/JobFit-AI" class="proj-link" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </a>
+    </div>
+
+    <div class="proj fade-up">
+      <span class="proj-num">02</span>
+      <div>
+        <div class="proj-title">Moodify — music recommendation system</div>
+        <div class="proj-desc">MobileNetV2 transfer learning on Mel spectrograms from GTZAN. Resolved severe overfitting (train 75% → val 10%) by replacing custom CNN with frozen ImageNet weights, reaching 81.6% test accuracy. Live Streamlit demo accepts any audio file and returns ranked genre probabilities in real time.</div>
+        <div class="proj-stack"><span class="stag">MobileNetV2</span><span class="stag">TensorFlow</span><span class="stag">Librosa</span><span class="stag">Streamlit</span><span class="stag">OpenCV</span><span class="stag">GTZAN</span></div>
+      </div>
+      <a href="https://github.com/atharva0324/Acoustic-based-Music-recommendation-system" class="proj-link" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </a>
+    </div>
+
+    <div class="proj fade-up">
+      <span class="proj-num">03</span>
+      <div>
+        <div class="proj-title">PCOS risk prediction API</div>
+        <div class="proj-desc">XGBoost classifier benchmarked against Random Forest and SVM across 5+ MLflow-tracked experiments. Final model achieved recall 0.80 on PCOS-positive class. Full production pipeline: FastAPI backend + Streamlit UI, Dockerized and deployed on AWS EC2 with GitHub Actions CI/CD. Latency &lt;200ms end-to-end.</div>
+        <div class="proj-stack"><span class="stag">XGBoost</span><span class="stag">FastAPI</span><span class="stag">Docker</span><span class="stag">AWS EC2</span><span class="stag">MLflow</span><span class="stag">Optuna</span><span class="stag">GitHub Actions</span></div>
+      </div>
+      <a href="https://github.com/atharva0324/pcos-api" class="proj-link" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </a>
+    </div>
+
+    <div class="proj fade-up">
+      <span class="proj-num">04</span>
+      <div>
+        <div class="proj-title">NYC flight delay predictor</div>
+        <div class="proj-desc">End-to-end ML pipeline on 300K+ FAA flight records using Medallion architecture on Databricks/Spark. Benchmarked 6 algorithms; XGBoost achieved ROC-AUC 0.763. Exposed a predict() endpoint via MCP server enabling direct integration with AI assistant workflows.</div>
+        <div class="proj-stack"><span class="stag">XGBoost</span><span class="stag">Apache Spark</span><span class="stag">Databricks</span><span class="stag">Streamlit</span><span class="stag">MCP</span><span class="stag">scikit-learn</span></div>
+      </div>
+      <a href="https://github.com/atharva0324/NY-flight-delay-project" class="proj-link" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="sec-hd fade-up"><span class="sec-title">Stack</span></div>
+    <div class="skill-grid fade-up">
+      <div class="skill-cell">
+        <div class="skill-cat">NLP & transformers</div>
+        <span class="sk">BERT</span><span class="sk">RoBERTa</span><span class="sk">HuggingFace Transformers</span><span class="sk">Sentence Transformers</span><span class="sk">BIO tagging</span><span class="sk">NER</span><span class="sk">all-MiniLM-L6-v2</span><span class="sk">Sequence Labeling</span><span class="sk">Text Classification</span>
+      </div>
+      <div class="skill-cell">
+        <div class="skill-cat">ML & deep learning</div>
+        <span class="sk">XGBoost</span><span class="sk">Random Forest</span><span class="sk">TensorFlow</span><span class="sk">Keras</span><span class="sk">PyTorch</span><span class="sk">scikit-learn</span><span class="sk">CNNs</span><span class="sk">LSTMs</span><span class="sk">RNNs</span><span class="sk">MobileNetV2</span><span class="sk">Optuna</span><span class="sk">Cross-Validation</span><span class="sk">Feature Engineering</span>
+      </div>
+      <div class="skill-cell">
+        <div class="skill-cat">MLOps & deployment</div>
+        <span class="sk">FastAPI</span><span class="sk">Docker</span><span class="sk">MLflow</span><span class="sk">AWS EC2</span><span class="sk">GitHub Actions</span><span class="sk">Streamlit</span><span class="sk">REST APIs</span><span class="sk">CI/CD</span><span class="sk">Model Serialization</span><span class="sk">Inference Pipelines</span><span class="sk">Git</span>
+      </div>
+      <div class="skill-cell">
+        <div class="skill-cat">Data & languages</div>
+        <span class="sk">Python</span><span class="sk">R</span><span class="sk">SQL</span><span class="sk">Apache Spark</span><span class="sk">Databricks</span><span class="sk">Pandas</span><span class="sk">NumPy</span><span class="sk">Librosa</span><span class="sk">OpenCV</span><span class="sk">Matplotlib</span><span class="sk">Seaborn</span><span class="sk">MySQL</span><span class="sk">PostgreSQL</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="sec-hd fade-up"><span class="sec-title">Education</span></div>
+    <div class="fade-up">
+      <div class="edu-item">
+        <div>
+          <div class="edu-deg">M.S. Data Science</div>
+          <div class="edu-school">University at Buffalo, SUNY</div>
+        </div>
+        <span class="edu-date">Aug 2025 – Dec 2026</span>
+      </div>
+      <div class="edu-item">
+        <div>
+          <div class="edu-deg">B.E. Artificial Intelligence & ML</div>
+          <div class="edu-school">SIES Graduate School of Technology</div>
+        </div>
+        <span class="edu-date">Jul 2021 – May 2025</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="sec-hd fade-up"><span class="sec-title">Get in touch</span></div>
+    <p style="font-size:15px;color:var(--text-sec);margin-bottom:1.25rem;line-height:1.6" class="fade-up">Open to full-time DS/ML roles starting early 2027. OPT available — no cap-gap issues.</p>
+    <div class="contact-grid">
+      <a href="mailto:shindeatharva0324@gmail.com" class="contact-card fade-up">
+        <div class="contact-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div>
+        <div><div class="contact-label">Email</div><div class="contact-val">shindeatharva0324@gmail.com</div></div>
+      </a>
+      <a href="https://linkedin.com/in/atharva-shinde-51b646284" class="contact-card fade-up" target="_blank" rel="noopener">
+        <div class="contact-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div>
+        <div><div class="contact-label">LinkedIn</div><div class="contact-val">atharva-shinde-51b646284</div></div>
+      </a>
+      <a href="https://github.com/atharva0324" class="contact-card fade-up" target="_blank" rel="noopener">
+        <div class="contact-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.2c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg></div>
+        <div><div class="contact-label">GitHub</div><div class="contact-val">atharva0324</div></div>
+      </a>
+      <a href="tel:+17162470475" class="contact-card fade-up">
+        <div class="contact-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+        <div><div class="contact-label">Phone</div><div class="contact-val">+1 716-247-0475</div></div>
+      </a>
+    </div>
+  </section>
+
+  <footer class="fade-up">Built by Atharva Shinde · 2026</footer>
+
+</div>
+<script>
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('vis'), i * 70);
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
